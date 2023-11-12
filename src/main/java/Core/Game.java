@@ -1,5 +1,7 @@
 package Core;
 
+import Locations.Location;
+import Locations.SafeHouse;
 import Players.Player;
 import Settings.ColorSettings;
 import Settings.GameSettings;
@@ -47,6 +49,75 @@ public class Game {
 
         // Oyuncu karakter seçimi metodu
         gamePlayer.selectGameClass();
+
+        // Bölge işlemleri
+        Location playerLocation = null;
+        int selectLocation = 0;
+
+        Location[] locationList = {
+            new SafeHouse(gamePlayer)
+        };
+
+        do {
+            GameSettings.align(42);
+			GameSettings.title("Bölgeler");
+
+			System.out.println(ColorSettings.PURPLE);
+			GameSettings.align(46);
+			System.out.printf("---------------------%n");
+			GameSettings.align(46);
+			System.out.printf("| %-2s | %-12s |%n", "ID", "Bölge");
+			GameSettings.align(46);
+			System.out.printf("---------------------%n");
+
+            for (Location itemLocation : locationList) {
+				GameSettings.align(46);
+				System.out.printf("| %-2s | %-12s |%n", itemLocation.getId(), itemLocation.getLocationName());
+			}
+			GameSettings.align(46);
+			System.out.printf("| %-2s | %-12s |%n", locationList.length + 1, "Çıkış");
+
+			System.out.println(ColorSettings.RESET);
+
+			GameSettings.align(40);
+			GameSettings.line();
+
+            GameSettings.input("Bölge Seç: ");
+			selectLocation = GameSettings.inputScanner.nextInt();
+			System.out.print(ColorSettings.RESET);
+
+            switch (selectLocation) {
+                case 1:
+                    playerLocation = locationList[0];
+                    break;
+                case 2:
+                    GameSettings
+                            .informationMessage("Oyun Kapanıyor!!! Oyuna tekrar bekleriz sayın " + gamePlayer.getPlayerName());
+                    System.exit(0);
+                    break;
+                default:
+                    GameSettings.warningMessage("Geçersiz bölge bilgisi verildi!");
+                    break;
+                }
+    
+                if (playerLocation != null) {
+                    GameSettings.align(40);
+                    GameSettings.line();
+                    GameSettings.align(20);
+                    GameSettings.informationMessage("Seçilen bölge: " + playerLocation.getLocationName());
+                    GameSettings.align(40);
+                    GameSettings.line();
+    
+                    playerLocation.onLocation();
+                }
+    
+                selectLocation = 0;
+                playerLocation = null;
+    
+                if (selectLocation == locationList.length + 1) {
+                    break;
+                }    
+        } while (true);
     }
 
     // Oyuncu rehberi
@@ -68,6 +139,12 @@ public class Game {
 		GameSettings.align(20);
 		GameSettings.article(
 				"Karakter sınıfı seçiminiz belirlenen id'lerden biri olmazsa tekrar seçim yapmanız bekleniyor.");
+		GameSettings.align(20);
+        GameSettings.article("Bölgeler liste halinde karşınıza çıkıyor.");
+		GameSettings.align(20);
+		GameSettings.article("Bölge seçimi geçersiz değer olduğunda tekrar seçim sağlamanız bekleniyor.");
+		GameSettings.align(20);
+		GameSettings.article("Güvenli Ev'de canınızı yenileyebilirsiniz.");
 		GameSettings.align(20);
 
 		System.out.println();
