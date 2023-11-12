@@ -44,6 +44,9 @@ public class Game {
 				+ ColorSettings.CYAN_BOLD_BRIGHT + gamePlayer.getPlayerName() + ColorSettings.RESET);
 
 		System.out.println();
+
+        // Oyuncu karakter seçimi metodu
+        gamePlayer.selectGameClass();
     }
 
     // Oyuncu rehberi
@@ -60,6 +63,12 @@ public class Game {
 		GameSettings.article("Oyuna başladığınızda oyuncu ismi giriyorsunuz.");
 		GameSettings.align(20);
 		GameSettings.article("Oyuncu isminiz boş ve 6 haneden küçük olmamalı.");
+        GameSettings.align(20);
+		GameSettings.article("Karakter sınıfları karşınıza liste halinde çıkıyor ve oyuncu sınıfınızı seçiyorsunuz. ");
+		GameSettings.align(20);
+		GameSettings.article(
+				"Karakter sınıfı seçiminiz belirlenen id'lerden biri olmazsa tekrar seçim yapmanız bekleniyor.");
+		GameSettings.align(20);
 
 		System.out.println();
     }
