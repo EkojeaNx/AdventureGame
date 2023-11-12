@@ -2,6 +2,7 @@ package Core;
 
 import Locations.Location;
 import Locations.SafeHouse;
+import Locations.ToolStore;
 import Players.Player;
 import Settings.ColorSettings;
 import Settings.GameSettings;
@@ -55,7 +56,8 @@ public class Game {
         int selectLocation = 0;
 
         Location[] locationList = {
-            new SafeHouse(gamePlayer)
+            new SafeHouse(gamePlayer),
+            new ToolStore(gamePlayer)
         };
 
         do {
@@ -91,6 +93,9 @@ public class Game {
                     playerLocation = locationList[0];
                     break;
                 case 2:
+                    playerLocation = locationList[1];
+                    break;
+                case 3:
                     GameSettings
                             .informationMessage("Oyun Kapanıyor!!! Oyuna tekrar bekleriz sayın " + gamePlayer.getPlayerName());
                     System.exit(0);
@@ -146,6 +151,7 @@ public class Game {
 		GameSettings.align(20);
 		GameSettings.article("Güvenli Ev'de canınızı yenileyebilirsiniz.");
 		GameSettings.align(20);
+        GameSettings.article("Mağaza'da Silah ve Zırh alıp daha üst seviye canavarları yok edip ödüller alabilirsin.");
 
 		System.out.println();
     }

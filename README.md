@@ -17,3 +17,6 @@ Java ile yazılıp geliştirilmeye çalışılan metin tabanlı bir macera oyunu
 
     - Özellik : Can Yenileniyor
 
+2. Mağaza
+
+    - Özellik : Destekleyici Eşyalar Satın Almak
