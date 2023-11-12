@@ -3,6 +3,7 @@ package Locations;
 import Players.Player;
 import Settings.ColorSettings;
 import Settings.GameSettings;
+import Weapons.Weapon;
 
 public class ToolStore extends NormalLocation {
 
@@ -47,6 +48,8 @@ public class ToolStore extends NormalLocation {
                 GameSettings.informationMessage("Seçilen işlem: Silah");
                 GameSettings.align(40);
                 GameSettings.line();
+
+                Weapon.selectWeapon();
                 break;
             case 2:
                 GameSettings.align(20);
