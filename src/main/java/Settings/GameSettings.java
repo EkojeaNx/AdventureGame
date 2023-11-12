@@ -1,10 +1,14 @@
 package Settings;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public abstract class GameSettings {
     // Oyuncudan veri alma kütüphanesi
-	 public static Scanner inputScanner = new Scanner(System.in);
+	public static Scanner inputScanner = new Scanner(System.in);
+	
+	// Rastgele sayı üretme
+	public static Random randomNumberGenerator = new Random();
 	
 	// Başlık
 	public static void title(String text) {
