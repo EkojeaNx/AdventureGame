@@ -20,3 +20,5 @@ Java ile yazılıp geliştirilmeye çalışılan metin tabanlı bir macera oyunu
 2. Mağaza
 
     - Özellik : Destekleyici Eşyalar Satın Almak
+    - Silah : Yumruk, Çift Bıçak, Kılıç, Yay, Asa
+    - Zırh : Kafalık, Kıyafet, Pantolon, Eldiven, Bot
