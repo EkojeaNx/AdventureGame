@@ -23,6 +23,24 @@ Java ile yazılıp geliştirilmeye çalışılan metin tabanlı bir macera oyunu
     - Silah : Yumruk, Çift Bıçak, Kılıç, Yay, Asa
     - Zırh : Kafalık, Kıyafet, Pantolon, Eldiven, Bot
 
+3. Nehir
+
+    - Canavar : Vampir
+    - Özellik : Savaş + Ganimet
+    - Eşya : Su (Water)
+
+4. Orman
+
+    - Canavar : Ayı
+    - Özellik : Savaş + Ganimet
+    - Eşya : Odun (Firewood)
+
+5. Mağara
+
+    - Canavar : Zombi
+    - Özellik : Savaş + Ganimet
+    - Eşya : Yemek (Food)
+
 # SİLAHLAR
 
 | Id   |      Silah      |      Hasar      |  Para |

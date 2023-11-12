@@ -1,6 +1,9 @@
 package Core;
 
+import Locations.Cave;
+import Locations.Forest;
 import Locations.Location;
+import Locations.River;
 import Locations.SafeHouse;
 import Locations.ToolStore;
 import Players.Player;
@@ -57,7 +60,10 @@ public class Game {
 
         Location[] locationList = {
             new SafeHouse(gamePlayer),
-            new ToolStore(gamePlayer)
+            new ToolStore(gamePlayer),
+            new River(gamePlayer),
+            new Forest(gamePlayer),
+            new Cave(gamePlayer)
         };
 
         do {
@@ -96,6 +102,15 @@ public class Game {
                     playerLocation = locationList[1];
                     break;
                 case 3:
+                    playerLocation = locationList[2];
+                    break;
+                case 4:
+                    playerLocation = locationList[3];
+                    break;
+                case 5:
+                    playerLocation = locationList[4];
+                    break;
+                case 6:
                     GameSettings
                             .informationMessage("Oyun Kapanıyor!!! Oyuna tekrar bekleriz sayın " + gamePlayer.getPlayerName());
                     System.exit(0);
