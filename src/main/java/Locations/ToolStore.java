@@ -1,5 +1,6 @@
 package Locations;
 
+import Armors.Armor;
 import Players.Player;
 import Settings.ColorSettings;
 import Settings.GameSettings;
@@ -56,6 +57,8 @@ public class ToolStore extends NormalLocation {
                 GameSettings.informationMessage("Seçilen işlem: Zırh");
                 GameSettings.align(40);
                 GameSettings.line();
+
+                Armor.selectArmor();
                 break;
             case 3:
                 GameSettings.align(20);
