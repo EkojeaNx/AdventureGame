@@ -5,12 +5,14 @@ public abstract class Monster {
     private String monsterName;
     private int damage;
     private int health;
+    private int maxMonster;
 
-    public Monster(int id, String monsterName, int damage, int health) {
+    public Monster(int id, String monsterName, int damage, int health, int maxMonster) {
         this.id = id;
         this.monsterName = monsterName;
         this.damage = damage;
         this.health = health;
+        this.maxMonster = maxMonster;
     }
 
     public int getId() {
@@ -45,5 +47,12 @@ public abstract class Monster {
         this.health = health;
     }
 
+    public int getMaxMonster() {
+        return maxMonster;
+    }
+
+    public void setMaxMonster(int maxMonster) {
+        this.maxMonster = maxMonster;
+    }
     
 }

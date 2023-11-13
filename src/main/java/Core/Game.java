@@ -25,8 +25,8 @@ public class Game {
         // Oyuncu Oluşturma
         String playerName;
         do {
-            GameSettings.input("Oyuncu Adını Giriniz: ");
-			playerName = GameSettings.inputScanner.nextLine();
+            //GameSettings.input("Oyuncu Adını Giriniz: ");
+			playerName = "EkojeaN"; //GameSettings.inputScanner.nextLine();
 			System.out.print(ColorSettings.RESET);
 
 			playerName = playerName.toString().trim();

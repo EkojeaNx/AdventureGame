@@ -11,6 +11,9 @@ import Settings.GameSettings;
 public class Player {
     private String playerName;
     private GameClass playerGameClass;
+	private int playerDamage;
+	private int playerHealth;
+	private int playerMoney;
 
     public Player(String playerName) {
         this.playerName = playerName;
@@ -32,7 +35,31 @@ public class Player {
         this.playerGameClass = playerGameClass;
     }
 
-    // Oyuncu karakter seçimi metodu
+    public int getPlayerDamage() {
+		return playerDamage;
+	}
+
+	public void setPlayerDamage(int playerDamage) {
+		this.playerDamage = playerDamage;
+	}
+
+	public int getPlayerHealth() {
+		return playerHealth;
+	}
+
+	public void setPlayerHealth(int playerHealth) {
+		this.playerHealth = playerHealth;
+	}
+
+	public int getPlayerMoney() {
+		return playerMoney;
+	}
+
+	public void setPlayerMoney(int playerMoney) {
+		this.playerMoney = playerMoney;
+	}
+
+	// Oyuncu karakter seçimi metodu
     public void selectGameClass() {
         GameSettings.align(37);
 		GameSettings.title("Oyun Karakterleri");
@@ -63,28 +90,31 @@ public class Player {
 
         int selectGameClass;
         do {
-            GameSettings.input("Karakter Seçimi Yapınız: ");
-			selectGameClass = GameSettings.inputScanner.nextInt();
+            //GameSettings.input("Karakter Seçimi Yapınız: ");
+			selectGameClass = 3; //GameSettings.inputScanner.nextInt();
 			System.out.print(ColorSettings.RESET);
 			switch (selectGameClass) {
 				case 1:
-					playerGameClass = gameClassList[0];
+					this.playerGameClass = gameClassList[0];
 					break;
 				case 2:
-					playerGameClass = gameClassList[1];
+					this.playerGameClass = gameClassList[1];
 					break;
 				case 3:
-					playerGameClass = gameClassList[2];
+					this.playerGameClass = gameClassList[2];
 					break;
 				case 4:
-					playerGameClass = gameClassList[3];
+					this.playerGameClass = gameClassList[3];
 					break;
 				default:
 					GameSettings.warningMessage("Geçersiz Karakter Seçimi Yaptınız!");
 					break;
 			}
 			
-			if (playerGameClass != null) {
+			if (this.playerGameClass != null) {
+				this.playerDamage = this.playerGameClass.getDamage();
+				this.playerHealth = this.playerGameClass.getHealth();
+				this.playerMoney = this.getPlayerGameClass().getMoney();
 				break;
 			}
         } while (true);
