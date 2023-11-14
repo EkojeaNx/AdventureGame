@@ -4,12 +4,12 @@ Java ile yazılıp geliştirilmeye çalışılan metin tabanlı bir macera oyunu
 
 # KARAKTERLER
 
-| Id   |      Karakter      |      Hasar      |      Sağlık      |  Para |
-|----------|:-------------:|:-------------:|:-------------:|------:|
-| 1 | Şovalye | 0 | 0 | 0₺ |
-| 2 | Savaşçı | 0 | 0 | 0₺ |
-| 3 | Okçu | 0 | 0 | 0₺ |
-| 4 | Büyücü | 0 | 0 | 0₺ |
+| Id   |      Karakter      |      Hasar      |      Sağlık      |      Defans      |  Para |
+|----------|:-------------:|:-------------:|:-------------:|:-------------:|------:|
+| 1 | Şovalye | 100 | 85 | 100 | 0₺ |
+| 2 | Savaşçı | 50 | 125 | 120 | 0₺ |
+| 3 | Okçu | 90 | 75 | 70 | 0₺ |
+| 4 | Büyücü | 80 | 60 | 60 | 0₺ |
 
 # BÖLGELER
 
@@ -63,8 +63,8 @@ Java ile yazılıp geliştirilmeye çalışılan metin tabanlı bir macera oyunu
 
 # CANAVARLAR
 
-| Id   |      Canavar      |      Hasar      |      Sağlık      |  Para |
+| Id   |      Canavar      |      Hasar      |      Sağlık      |  Max Canavar |
 |----------|:-------------:|:-------------:|:-------------:|------:|
-| 1 | Ayı | 0 | 0 | 0₺ |
-| 2 | Vampir | 0 | 0 | 0₺ |
-| 3 | Zombi | 0 | 0 | 0₺ |
+| 1 | Ayı | 0 | 0 | 0 |
+| 2 | Vampir | 0 | 0 | 0 |
+| 3 | Zombi | 0 | 0 | 0 |

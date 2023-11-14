@@ -13,6 +13,7 @@ public class Player {
     private GameClass playerGameClass;
 	private int playerDamage;
 	private int playerHealth;
+	private int playerDefence;
 	private int playerMoney;
 
     public Player(String playerName) {
@@ -59,6 +60,18 @@ public class Player {
 		this.playerMoney = playerMoney;
 	}
 
+	public int getPlayerDefence() {
+		return playerDefence;
+	}
+
+	public void setPlayerDefence(int playerDefence) {
+		this.playerDefence = playerDefence;
+	}
+
+	// Oyuncu bilgileri metodu
+	public void getPlayerInfortaion() {
+	}
+
 	// Oyuncu karakter seçimi metodu
     public void selectGameClass() {
         GameSettings.align(37);
@@ -75,13 +88,13 @@ public class Player {
 		GameSettings.align(36);
 		System.out.printf("------------------------------------------%n");
 		GameSettings.align(36);
-		System.out.printf("| %-2s | %-12s | %4s | %4s |%4s |%n", "ID", "KARAKTER", "HASAR", "CAN", "PARA");
+		System.out.printf("| %-2s | %-12s | %4s | %4s | %4s |%4s |%n", "ID", "KARAKTER", "HASAR", "CAN", "Defans", "PARA");
 		GameSettings.align(36);
 		System.out.printf("------------------------------------------%n");
 
         for (GameClass itemGameClass : gameClassList) {
 			GameSettings.align(36);
-			System.out.printf("| %-2s | %-12s | %4s  | %4s |%4s |%n", itemGameClass.getId(), itemGameClass.getGameClassName(), itemGameClass.getDamage(), itemGameClass.getHealth(), itemGameClass.getMoney());
+			System.out.printf("| %-2s | %-12s | %4s  | %4s |  %4s  |%4s |%n", itemGameClass.getId(), itemGameClass.getGameClassName(), itemGameClass.getDamage(), itemGameClass.getHealth(), itemGameClass.getDefence(), itemGameClass.getMoney());
 		}
 
         System.out.println(ColorSettings.RESET);
@@ -123,7 +136,7 @@ public class Player {
 		GameSettings.align(40);
 		GameSettings.line();
 		GameSettings.align(20);
-		GameSettings.informationMessage("Seçim yaptığınız Karakter: " + playerGameClass.getGameClassName() + " Hasar: " + playerGameClass.getDamage() + " Can: " + playerGameClass.getHealth() + " Para: " + playerGameClass.getMoney());
+		GameSettings.informationMessage("Seçim yaptığınız Karakter: " + this.playerGameClass.getGameClassName() + " Hasar: " + playerGameClass.getDamage() + " Can: " + playerGameClass.getHealth() + " Defans: " + playerGameClass.getDefence() + " Para: " + playerGameClass.getMoney());
 		GameSettings.align(40);
 		GameSettings.line();
     }

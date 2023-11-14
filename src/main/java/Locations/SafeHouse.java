@@ -17,6 +17,10 @@ public class SafeHouse extends NormalLocation {
 		GameSettings.align(40);
 		GameSettings.informationMessage("Canınız yenilendi!");
 
+        this.getGamePlayer().setPlayerHealth(this.getGamePlayer().getPlayerGameClass().getHealth());
+
+        
+
         System.out.println();
 		GameSettings.align(40);
 		GameSettings.line();

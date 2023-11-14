@@ -5,13 +5,15 @@ public abstract class GameClass {
     private String gameClassName;
     private int damage;
     private int health;
+    private int defence;
     private int money;
 
-    public GameClass(int id, String gameClassName, int damage, int health, int money) {
+    public GameClass(int id, String gameClassName, int damage, int health, int defence, int money) {
         this.id = id;
         this.gameClassName = gameClassName;
         this.damage = damage;
         this.health = health;
+        this.defence = defence;
         this.money = money;
     }
 
@@ -53,5 +55,15 @@ public abstract class GameClass {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public int getDefence() {
+        return defence;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
     }    
+
+    
 }

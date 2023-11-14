@@ -92,10 +92,12 @@ public abstract class BattleLocation extends Location {
     }
 
     public boolean warfare() {
-        String selectProcess;
+        String selectStrike;
         for (int i = 0; i < this.getMonsterNumber(); i++) {
             playerInformation();
             monsterInformation();
+
+            this.getGamePlayer().setPlayerHealth(7);
             
             while (this.getGamePlayer().getPlayerHealth() > 0 && this.getBattleMonster().getHealth() > 0) {
                 
@@ -103,14 +105,16 @@ public abstract class BattleLocation extends Location {
                 GameSettings.line();
 
                 GameSettings.input("<V>ur veya <B>lokla Durumunuzu belirtin : ");
-		        selectProcess = GameSettings.inputScanner.next().toUpperCase();
+		        selectStrike = GameSettings.inputScanner.next().toUpperCase();
 		        System.out.print(ColorSettings.RESET);
 
                 GameSettings.align(40);
                 GameSettings.line();
-            }
 
-            System.out.println(this.getMonsterNumber());
+                if (selectStrike.equals("V")) {
+                    this.battleMonster.setHealth(this.battleMonster.getHealth() - 1);
+                }
+            }
         }
         return false;
     }
