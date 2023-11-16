@@ -50,7 +50,12 @@ public class ToolStore extends NormalLocation {
                 GameSettings.align(40);
                 GameSettings.line();
 
-                Weapon.selectWeapon();
+                Weapon selectInitWeapon = Weapon.selectWeapon();
+
+                if (selectInitWeapon != null) {
+                    GameSettings.informationMessage("Seçilen silah: " + selectInitWeapon.getWeaponName());
+                }
+
                 break;
             case 2:
                 GameSettings.align(20);
@@ -58,7 +63,12 @@ public class ToolStore extends NormalLocation {
                 GameSettings.align(40);
                 GameSettings.line();
 
-                Armor.selectArmor();
+                Armor selectInitArmor = Armor.selectArmor();
+
+                if (selectInitArmor != null) {
+                    GameSettings.informationMessage("Seçilen zırh: " + selectInitArmor.getArmorName());
+                }
+
                 break;
             case 3:
                 GameSettings.align(20);

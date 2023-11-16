@@ -68,18 +68,6 @@ public abstract class BattleLocation extends Location {
         return true;
     }
 
-    public void playerInformation() {
-        GameSettings.align(40);
-        GameSettings.title("Değerleriniz");
-        System.out.println("Hasar: " + this.getGamePlayer().getPlayerDamage());
-        System.out.println("Can: " + this.getGamePlayer().getPlayerHealth());
-        System.out.println("Para: " + this.getGamePlayer().getPlayerMoney());
-
-        System.out.println();
-        GameSettings.align(40);
-        GameSettings.line();
-    }
-
     public void monsterInformation() {
         GameSettings.align(36);
         GameSettings.title(this.getBattleMonster().getMonsterName() + " Canavarının Değerleri");
@@ -94,7 +82,7 @@ public abstract class BattleLocation extends Location {
     public boolean warfare() {
         String selectStrike;
         for (int i = 0; i < this.getMonsterNumber(); i++) {
-            playerInformation();
+            this.getGamePlayer().getPlayerInfortaion();
             monsterInformation();
 
             this.getGamePlayer().setPlayerHealth(7);
@@ -105,7 +93,7 @@ public abstract class BattleLocation extends Location {
                 GameSettings.line();
 
                 GameSettings.input("<V>ur veya <B>lokla Durumunuzu belirtin : ");
-		        selectStrike = GameSettings.inputScanner.next().toUpperCase();
+		        selectStrike = GameSettings.inputScanner.nextLine().toUpperCase();
 		        System.out.print(ColorSettings.RESET);
 
                 GameSettings.align(40);

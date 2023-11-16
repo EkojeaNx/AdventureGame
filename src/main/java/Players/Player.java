@@ -70,7 +70,16 @@ public class Player {
 
 	// Oyuncu bilgileri metodu
 	public void getPlayerInfortaion() {
-	}
+        GameSettings.align(40);
+        GameSettings.title("Değerleriniz");
+        System.out.println("Hasar: " + this.getPlayerDamage());
+        System.out.println("Can: " + this.getPlayerHealth());
+        System.out.println("Para: " + this.getPlayerMoney());
+
+        System.out.println();
+        GameSettings.align(40);
+        GameSettings.line();
+    }
 
 	// Oyuncu karakter seçimi metodu
     public void selectGameClass() {
